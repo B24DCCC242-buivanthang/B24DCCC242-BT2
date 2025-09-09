@@ -1,0 +1,38 @@
+public class Chunhat {
+    private int x;
+    private int y; 
+
+    public Chunhat(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getCv() {
+        return 2 * (x + y);
+    }
+
+    public int getDt() {
+        return x * y;
+    }
+
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            return;
+        }
+
+        try {
+            int x = Integer.parseInt(args[0]);
+            int y = Integer.parseInt(args[1]);
+            if (x <= 0 || y <= 0) {
+                return;
+            }
+
+            Chunhat rect = new Chunhat(x, y);
+            System.out.println(rect.getCv());
+            System.out.println(rect.getDt());
+
+        } catch (NumberFormatException e) {
+            return;
+        }
+    }
+}
